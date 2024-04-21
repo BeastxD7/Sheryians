@@ -176,3 +176,45 @@ nav h2:nth-last-child(1) {
         transform: translateX(-100%);
     }
 }
+
+#alphabet{
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    height: 10vh;
+    width: 100%;
+    /* background-color: beige; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.3vw;
+}
+
+#alphabet h5{
+    font-size: 1.7vw;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-style: italic;
+    
+}
+
+#alphabet h6{
+    font-size: 1vw;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-style: italic;
+    padding: 0.5vw 0.7vw;
+    border-radius: 50%;
+    transition: all 1s ease;
+    margine-right: 2vw;
+}
+
+#alphabet h6:hover{
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+#page2{
+    height: 100%;
+    width: 100%;
+}
