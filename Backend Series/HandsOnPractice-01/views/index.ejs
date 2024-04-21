@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+</head>
+
+<body class="bg-zinc-900">
+    <div class="main h-fit w-screen bg-zinc-900 font-sans ">
+
+        <nav class="text-white flex justify-center px-5 h-24 w-full bg-[#000] items-center  ">
+
+            <div class="logo flex  text-2xl font-bold cursor-pointer">
+                <h2>NOTEPAD</h2>
+            </div>
+            <!-- <ul class="flex  gap-5 px-2 font-medium cursor-pointer  ">
+                <li class="text-xl text-slate-300 hover:text-slate-100">Home</li>
+                <li class="text-xl text-slate-300 hover:text-slate-100">About</li>
+                <li class="text-xl text-slate-300 hover:text-slate-100">Services</li>
+                <li class="text-xl text-slate-300 hover:text-slate-100">Portfolio</li>
+                <li class="text-xl text-slate-300 hover:text-slate-100">Contact Us</li>
+            </ul> -->
+        </nav>
+
+        <header class="h-[92%]">
+
+            <div class="box h-full w-full">
+
+                <section class="p-10">
+                    <form action="/create" method="post">
+                        <input name="title" class=" bg-zinc-700 rounded outline-none px-2 py-1 w-full block mt-5 text-white" type="text" placeholder="Enter your Title Here">
+                        <textarea name="desc" class=" resize-none bg-zinc-700 rounded outline-none px-2 py-1 w-full block mt-5 text-white" id="" cols="10" rows="3" placeholder="Enter your Description Here"></textarea>
+                        <input class="text-white bg-green-500 px-4 py-2 mt-5 cursor-pointer rounded-lg" type="submit">
+                    </form>
+                </section>
+
+                <section class="w-full p-10 flex  justify-center items-center flex-wrap">
+
+                    <% if(files.length > 0) { %>
+                        <% files.forEach((val) => { %>
+                            <div
+                                class="card  text-white bg-zinc-700 min-h-20   mx-2 rounded px-10 flex flex-col flex-end center gap-2 m-5 ">
+                                <h1 class=" w-fit pt-2 text-xl">  <%= val %></h1>
+                                <a href="/file/<%= val %>" class="text-blue-700 text-sm underline cursor-pointer py-4 flex">ReadMore</a>
+                            </div>  
+                            <% }) %>
+                                <% } else { %>>
+                                    <div class="notask text-white">
+                                        <h3>No tasks Yet</h3>
+                                    </div>
+                                    <% } %>
+
+                </section>
+
+            </div>
+
+        </header>
+
+    </div>
+</body>
+
+</html>

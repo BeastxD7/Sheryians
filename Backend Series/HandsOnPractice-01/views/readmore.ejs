@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+</head>
+
+<body class="bg-zinc-900">
+    <div class="main h-fit w-screen bg-zinc-900 font-sans ">
+
+        <nav class="text-white flex justify-between px-5 h-24 w-full bg-[#000] items-center  ">
+
+            <div class="logo text-2xl font-bold cursor-pointer">
+                <h2>NOTEPAD</h2>
+            </div>
+            <ul class="flex  gap-5 px-2 font-medium cursor-pointer  ">
+                <a href="/" class=" text-white bg-blue-600 px-4 py-[0.5rem] rounded "> Go Back </a>
+                <!-- <li class="text-xl text-slate-300 hover:text-slate-100">Home</li>
+                <li class="text-xl text-slate-300 hover:text-slate-100">About</li>
+                <li class="text-xl text-slate-300 hover:text-slate-100">Services</li>
+                <li class="text-xl text-slate-300 hover:text-slate-100">Portfolio</li>
+                <li class="text-xl text-slate-300 hover:text-slate-100">Contact Us</li> -->
+            </ul>
+        </nav>
+
+        <header class="h-[92%]">
+
+            <div class="box h-full w-full p-10 flex justify-center">
+
+                <section class="w-screen flex-col justify-center items-center relative" >
+                    
+                    <h1 class="text-3xl font-bold  text-white flex justify-center mb-4"><%= filename %></h1>
+                    <h3 class="text-xl text-white flex justify-center"> <%= filedata %> </h3>
+                </section>
+            </div>
+
+        </header>
+
+    </div>
+</body>
+
+</html>
