@@ -206,7 +206,6 @@ nav h2:nth-last-child(1) {
     padding: 0.5vw 0.7vw;
     border-radius: 50%;
     transition: all 1s ease;
-    margine-right: 2vw;
 }
 
 #alphabet h6:hover{
@@ -215,6 +214,170 @@ nav h2:nth-last-child(1) {
 }
 
 #page2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100%;
     width: 100%;
+}
+
+#image-container{
+    padding: 0 13vw;
+    display: flex;
+    gap: 10vw;
+    /* justify-content:space-between; */
+    height: 85%;
+    width: 100%;
+    /* background: #000; */
+}
+
+.image1{
+    height: 100%;
+    width: 45%;
+}
+
+.image1 h1{
+    font-family: 'fantasy';
+    padding-top: 1rem ;
+    font-size: lvw;
+    letter-spacing: 0.3rem;
+    font-weight: bold;
+}
+
+.image1 img{
+    border-radius: 1rem;
+    height: 90%;
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+
+}
+
+.image2{
+    position: relative;
+    height: 100%;
+    width: 40%;
+}
+
+.image2 img{
+    border-radius: 1rem;
+    height: 75%;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.text-container{
+    font-family: 'poppins';
+    display: flex;
+    padding: 0.5rem 0rem;
+    height: 25%;
+    width: 100%;
+
+}
+
+
+.textleft{
+    height: 100%;
+    width: 50%;
+    display: flex;
+
+}
+
+.text1 h1{
+    font-size: 0.5rem;
+}
+
+.textright{
+    height: 100%;
+    width: 50%;
+    display: flex;
+}
+
+.textright p{
+    font-weight: 600;
+}
+
+#page3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+    width: 100%;
+    margin-bottom: 5rem;
+    /* background-color: beige; */
+}
+
+.left{
+    height: 100%;
+    width: 50%;
+    /* background: rgb(181, 255, 181); */
+}
+
+.right{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: rgb(23, 0, 128); */
+}
+
+.image3-container{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.image3-container img{
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    height: 50%;
+    width: 50%;
+    object-fit: cover;
+    margin: 5vw auto ;
+}
+
+.image3-container h1{
+    font-family: 'poppins';
+    margin-left: 13vw;
+    margin: 4vw;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+    padding: 1rem;
+}
+
+.image4-container{
+    height: 95%;
+    width: 65%;
+    /* background: #000; */
+    border-radius: 1rem;
+}
+
+.image4-container img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: 30% 30%;
+    border-radius: 1rem;
+}
+
+#page4{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4vw;
+}
+
+#page4 img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: 30% 30%;
+    border-radius: 1rem;
 }
