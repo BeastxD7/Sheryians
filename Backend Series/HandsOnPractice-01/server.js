@@ -1,6 +1,5 @@
 express = require('express');
 path = require('path');
-const { Console, error } = require('console');
 const fs = require('fs');
 
 
@@ -49,6 +48,8 @@ app.post('/edit/:filename', (req, res) =>{
 
     if(req.body.newfilename.length > 16  ) {
         res.render('error',{message: 'Title should be less than 15 characters'});
+    } else if(req.body.newfilename.length == 0 ){
+        res.render('error',{message: 'You cannot keep the title empty'});
     } else{
      fs.rename(`./files/${req.params.filename}`, `./files/${req.body.newfilename.split(" ").join('')}.txt`, (err) =>{
         console.log(`file renamed from ${req.body.oldfilename} to ${req.body.newfilename}.txt`);
