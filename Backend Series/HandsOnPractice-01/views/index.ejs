@@ -37,14 +37,19 @@
                     </form>
                 </section>
 
-                <section class="w-full p-10 flex  justify-center items-center flex-wrap">
+                <section class="w-full p-10 flex  justify-center items-center flex-wrap ">
 
                     <% if(files.length > 0) { %>
                         <% files.forEach((val) => { %>
                             <div
-                                class="card  text-white bg-zinc-700 min-h-20   mx-2 rounded px-10 flex flex-col flex-end center gap-2 m-5 ">
+                                class="card  text-white bg-zinc-700 min-h-20 w-[17rem] mx-4 rounded px-10 flex flex-col flex-end center gap-2 m-5 ">
                                 <h1 class=" w-fit pt-2 text-xl">  <%= val %></h1>
-                                <a href="/file/<%= val %>" class="text-blue-700 text-sm underline cursor-pointer py-4 flex">ReadMore</a>
+
+                                <div class="wrapper flex justify-between gap-x-0.5">
+                                    <a href="/file/<%= val %>" class="text-blue-700 text-sm underline cursor-pointer py-4 flex">Read More</a>
+                                    <a href="/edit/<%= val %>" class="text-blue-700 text-sm underline cursor-pointer py-4 flex">Edit Filename</a>
+                                </div>
+                                
                             </div>  
                             <% }) %>
                                 <% } else { %>>

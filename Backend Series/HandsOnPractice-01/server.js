@@ -1,5 +1,6 @@
 express = require('express');
 path = require('path');
+const { Console } = require('console');
 const fs = require('fs');
 
 
@@ -19,7 +20,7 @@ app.get('/', (req ,res) =>{
 })
 
 app.post('/create', (req,res) =>{
-    // console.log(req.body);
+    console.log(req.body);
 
     if(req.body.title.length == 0 || req.body.desc.length == 0){
         res.send('Please Enter Title and Description');
@@ -32,9 +33,19 @@ app.post('/create', (req,res) =>{
 
 app.get('/file/:filename', (req, res) =>{
     fs.readFile(`./files/${req.params.filename}`, 'utf8', (err, filedata) =>{
-        // console.log(filedata);
         res.render('readmore', {filename: req.params.filename, filedata: filedata});
     })
 })
+
+app.get('/edit/:filename', (req, res) =>{
+    res.render('edit', {filename: req.params.filename});
+})
+
+app.post('/edit/:filename', (req, res) =>{
+     fs.rename(`./files/${req.params.filename}`, `./files/${req.body.newfilename}`, (err) =>{
+        console.log(`file renamed from ${req.body.oldfilename} to ${req.body.newfilename}`);
+             res.redirect('/');
+         })
+     })
 
 app.listen(3000)
