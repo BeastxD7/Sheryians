@@ -1,6 +1,6 @@
 express = require('express');
 path = require('path');
-const { Console } = require('console');
+const { Console, error } = require('console');
 const fs = require('fs');
 
 
@@ -23,7 +23,11 @@ app.post('/create', (req,res) =>{
     console.log(req.body);
 
     if(req.body.title.length == 0 || req.body.desc.length == 0){
-        res.send('Please Enter Title and Description');
+        res.render('error',{message: 'Please enter all the fields in the Form'});
+    }
+
+    else if(req.body.title.length > 16  ) {
+        res.render('error',{message: 'Title should be less than 15 characters'});
     }
     else{
     fs.writeFile(`./files/${req.body.title.split(" ").join("")}.txt`, req.body.desc , (err) =>{
@@ -42,8 +46,8 @@ app.get('/edit/:filename', (req, res) =>{
 })
 
 app.post('/edit/:filename', (req, res) =>{
-     fs.rename(`./files/${req.params.filename}`, `./files/${req.body.newfilename}`, (err) =>{
-        console.log(`file renamed from ${req.body.oldfilename} to ${req.body.newfilename}`);
+     fs.rename(`./files/${req.params.filename}`, `./files/${req.body.newfilename.split(" ").join('')}.txt`, (err) =>{
+        console.log(`file renamed from ${req.body.oldfilename} to ${req.body.newfilename}.txt`);
              res.redirect('/');
          })
      })
