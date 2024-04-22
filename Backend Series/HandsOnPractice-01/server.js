@@ -46,10 +46,15 @@ app.get('/edit/:filename', (req, res) =>{
 })
 
 app.post('/edit/:filename', (req, res) =>{
+
+    if(req.body.newfilename.length > 16  ) {
+        res.render('error',{message: 'Title should be less than 15 characters'});
+    } else{
      fs.rename(`./files/${req.params.filename}`, `./files/${req.body.newfilename.split(" ").join('')}.txt`, (err) =>{
         console.log(`file renamed from ${req.body.oldfilename} to ${req.body.newfilename}.txt`);
              res.redirect('/');
          })
+        }
      })
 
 app.listen(3000)
