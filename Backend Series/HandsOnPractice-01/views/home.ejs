@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeastHub ❤️| Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/x-icon" href="/assets/logo.png">
+</head>
+<body class="h-screen w-screen">
+    <div class=" h-full w-full bg-zinc-900 main text-white">
+
+        <nav class="flex bg-zinc-700 h-16 w-full items-center justify-between px-12">
+            <h1 class="font-bold">BeastHub ❤️</h1>
+            <a href="/users"> <h1 class="bg-blue-500 py-2 px-4 rounded">Users</h1></a>
+        </nav>
+
+        <header>
+            <h1 class="text-4xl text-center mt-6">Create User</h1>
+        </header>
+
+        <div class="section1 w-full flex justify-center mt-6">
+            <form class="h-fit w-full flex flex-col items-center justify-center " action="/create" method="post">
+                <input class="max-sm:w-3/4 max-md:w-3/4 rounded bg-zinc-800 outline-none w-1/2 block mt-4 px-4 py-2" type="text" placeholder="Enter your username" name="username">
+                <input class="max-sm:w-3/4 max-md:w-3/4 rounded bg-zinc-800 outline-none w-1/2 block mt-4 px-4 py-2" type="email" placeholder="Enter your email" name="useremail">
+                <input class="max-sm:w-3/4 max-md:w-3/4 rounded bg-zinc-800 outline-none w-1/2 block mt-4 px-4 py-2" type="text" placeholder="Enter your imageurl" name="userimageurl">
+                <input class="rounded bg-green-700 outline-none block mt-4 px-4 py-2 justify-self-end " type="submit">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
