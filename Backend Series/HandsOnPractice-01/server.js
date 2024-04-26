@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
 app.post('/create', async (req, res) => {
 
     if (req.body.username.length == 0 || req.body.useremail == 0 || req.body.imageurl == 0) {
-        res.render('error', { message: "Please enter all the information in the Form " })
+        res.render('error', { message: "Please enter all the information in the Form (Don't Leave any field Empty!)"  })
     } else {
 
         let createdUser = await userModel.create({
@@ -58,8 +58,34 @@ app.get('/delete/:id', async (req, res) => {
     res.redirect('/users')
 })
 
-app.get('/update', (req, res) => {
+app.get('/edit/:userid', async (req, res) => {
+
+    let founduser = await userModel.findOneAndUpdate({
+        _id:req.params.userid
+    })
+
+    res.render('update',{user:founduser});
+})
+
+app.post('/update/:userid', async(req,res) =>{
+    
+    if (req.body.username.length == 0 || req.body.useremail == 0 || req.body.imageurl == 0) {
+        res.render('error', { message: "Please enter all the information in the Form (Don't Leave any field Empty!)" })
+    } else {
+
+        let updateuser = await userModel.findOneAndUpdate({
+            _id:req.params.userid
+        },{
+            name:req.body.username,
+            email:req.body.useremail,
+            imageurl:req.body.userimageurl
+        })
+        res.redirect('/users');
+        }
+
+
 
 })
+
 
 app.listen(3000);

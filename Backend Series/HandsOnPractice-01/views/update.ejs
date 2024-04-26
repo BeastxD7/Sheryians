@@ -20,18 +20,18 @@
         </nav>
 
         <header>
-            <h1 class="text-4xl text-center mt-6">Create User</h1>
+            <h1 class="text-4xl text-center mt-6">Update User</h1>
         </header>
 
         <div class="section1 w-full flex justify-center mt-6">
-            <form class="h-fit w-full flex flex-col items-center justify-center " action="/create" method="post">
+            <form class="h-fit w-full flex flex-col items-center justify-center " action="/update/<%= user._id  %>" method="post">
                 <input class="max-sm:w-3/4 max-md:w-3/4 rounded bg-zinc-800 outline-none w-1/2 block mt-4 px-4 py-2"
-                    type="text" placeholder="Enter your username" name="username">
+                    type="text" placeholder="Enter your username" name="username" value="<%= user.name %>">
                 <input class="max-sm:w-3/4 max-md:w-3/4 rounded bg-zinc-800 outline-none w-1/2 block mt-4 px-4 py-2"
-                    type="email" placeholder="Enter your email" name="useremail">
+                    type="email" placeholder="Enter your email" name="useremail" value="<%= user.email %>" >
                 <input class="max-sm:w-3/4 max-md:w-3/4 rounded bg-zinc-800 outline-none w-1/2 block mt-4 px-4 py-2"
-                    type="text" placeholder="Enter your imageurl" name="userimageurl">
-                <input class="rounded bg-green-700 outline-none block mt-4 px-4 py-2 justify-self-end " type="submit">
+                    type="text" placeholder="Enter your imageurl" name="userimageurl" value="<%= user.imageurl %>">
+                <input class="rounded bg-yellow-600 font-semibold outline-none block mt-4 px-4 py-2 justify-self-end" type="submit">
             </form>
         </div>
     </div>
