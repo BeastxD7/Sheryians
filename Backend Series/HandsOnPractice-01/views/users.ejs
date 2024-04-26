@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="../public/assets/logo.png" type="image/x-icon" />
 </head>
+
 <body class="h-screen w-screen bg-zinc-900">
     <div class=" h-fit w-full bg-zinc-900 main text-white">
 
         <nav class="flex bg-zinc-700 h-16 w-full items-center justify-between px-12">
             <h1 class="font-bold">BeastHub ❤️</h1>
-            <a href="/"> <h1 class="bg-blue-500 py-2 px-4 rounded">Back to Home</h1></a>
+            <a href="/">
+                <h1 class="bg-blue-500 py-2 px-4 rounded">Back to Home</h1>
+            </a>
         </nav>
 
         <header>
@@ -21,22 +25,36 @@
 
         <section class="px-8 py-4 flex flex-wrap h-fit justify-center">
 
-            <% if (user.length == 0) { %>
+            <% if (user.length==0) { %>
                 <h1 class="mt-8 text-xl font-semibold text-zinc-500">No users Yet</h1>
-            <% } else { %>
-          
-            <% user.forEach(function (user) { %>
-                <div class="card h-fit max-sm:w-3/4 w-64 flex flex-col overflow-hidden  items-center justify-center rounded p-4 bg-slate-700 m-4">
-                    <img class="h-48 w-48 object-cover object-position-top rounded-lg" src=" <%= user.imageurl %>" alt="">
-                    <h1 class="mt-2 text-center"><%= user.name %></h1>
-                    <h2 class="text-center mt-1 text-center text-sm text-slate-400"> <%= user.email %></h2>
-                </div> 
-            <% }) }; %>
+                <% } else { %>
+
+                    <% user.forEach(function (user) { %>
+                        <div
+                            class="card h-90 max-sm:w-3/4 w-64 flex flex-col overflow-hidden  items-center justify-center rounded p-4 bg-slate-700 m-4">
+                            <img class="h-48 w-48 object-cover object-position-top rounded-lg"
+                                src=" <%= user.imageurl %>" alt="">
+                            <h1 class="mt-2 text-center">
+                                <%= user.name %>
+                            </h1>
+                            <h2 class="text-center mt-1 text-center text-sm text-slate-400">
+                                <%= user.email %>
+                            </h2>
+                            <div class="wrapper flex justify-between items-center mt-2 px-6 w-full">
+                                <h3 class=" cursor-pointer font-sm text-yellow-500">Update</h3>
+                                <a href="/delete/<%= user._id %>">
+                                    <h3 class=" cursor-pointer font-sm text-red-500">Delete</h3>
+                                </a>
+
+                            </div>
+                        </div>
+                        <% }) }; %>
 
         </section>
-       
 
-        </div>
+
+    </div>
     </div>
 </body>
+
 </html>
